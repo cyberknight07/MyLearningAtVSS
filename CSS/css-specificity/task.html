@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity</title>
+
+    <style>
+        
+
+        .tmkc #jethalal{
+            color: blueviolet;
+        }
+
+        .tmkc #babuji{
+            color: aqua;
+        }
+
+        #babuji #tappu{
+            color: brown;
+        }
+
+        #tappu{
+            color: green;
+        }
+
+        .tmkc p{
+            color: blue;
+        }
+
+        .tmkc > p{
+            color: red;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="tmkc">
+        <p id="jethalal">Aaj jalebi fafda order krte hai</p>
+        <section id="babuji"> Hello <br>
+            <p> Nai jalebi fafda khate rho</p>
+            <p id="tappu"> Aaj ham bahar chlte hai </p>
+        </section>
+    </div>
+</body>
+</html>
