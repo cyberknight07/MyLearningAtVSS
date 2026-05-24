@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query Task</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0px;
+        }
+        .item{
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            width: 22%;
+            flex:1 1 auto;
+            padding: 30px;
+            border: 10px orange solid;
+        }
+
+        .container{
+            padding: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        @media screen and (min-width:480px) and (max-width: 768px) {
+            
+            .container{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+
+            .item{
+                width: 45%;
+            }
+        }
+
+        @media screen and (max-width:480px){
+            .container{
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+            }
+            .item{
+                width: 100%;
+            }
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="item">Hello</div>
+        <div class="item">Hello</div>
+        <div class="item">Hello</div>
+        <div class="item">Hello</div>
+        <div class="item">Hello</div>
+        <div class="item">Hello</div>
+        <div class="item">Hello</div>
+        <div class="item">Hello</div>
+    </div>
+</body>
+</html>

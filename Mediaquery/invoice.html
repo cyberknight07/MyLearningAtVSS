@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0px;
+        padding: 0px;
+        background-color: gainsboro;
+        font-size: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        padding-top: 16px;
+      }
+
+      .invoice {
+        width: 80%;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        line-height: 15px;
+        background-color: white;
+      }
+
+      .sender {
+        line-height: 5px;
+      }
+
+      table {
+        width: 100%;
+        text-align: left;
+        padding: 8px;
+      }
+
+      thead > tr > th {
+        font-weight: 700;
+        background: gainsboro;
+        padding: 8px;
+      }
+      tbody > tr > td {
+        padding: 8px;
+      }
+
+      .total {
+        font-weight: 900;
+      }
+
+      .btn {
+        width: fit-content;
+        padding: 8px 16px;
+        color: white;
+        background: rgb(5, 137, 220);
+        border: none;
+        border-radius: 8px;
+      }
+
+      @media print {
+
+        .invoice{
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .sender{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        table > thead > tr{
+            background: gainsboro;
+        }
+
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .total {
+            text-align: end;
+        }
+
+        .btn{
+            display: none;
+        }
+
+
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="invoice">
+        <h1>Invoice</h1>
+        <div class="sender">
+          <div class="sender-name">
+            <p><b>From:</b></p>
+            <p>My Company</p>
+            <p>mycompany.com</p>
+          </div>
+          <div class="sender-date">
+            <p><b>Invoice #:</b> 12345</p>
+          <p><b>Date:</b>01 Feb 2026</p>
+          </div>
+        </div>
+        <div class="item">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Web Design</td>
+                <td>1</td>
+                <td>$500</td>
+                <td>$500</td>
+              </tr>
+              <tr>
+                <td>Hosting</td>
+                <td>1</td>
+                <td>$100</td>
+                <td>$100</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="total">Grand Total: $600</p>
+        <button class="btn" onClick="{window.print()}">Print Invoice</button>
+      </div>
+    </div>
+  </body>
+</html>

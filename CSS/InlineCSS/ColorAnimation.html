@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Heading</title>
+</head>
+<body style="display:flex;justify-content:center;align-items:center;height:100vh;background: 0;">
+
+  <h1 style="
+    font-size:60px;
+    font-family:Arial, sans-serif;
+    background: linear-gradient(80deg, rgb(244, 78, 78), orange, yellow, green, cyan, blue, violet);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorMove 5s linear infinite;
+  ">
+    Animated Heading
+  </h1>
+
+  <style>
+    @keyframes colorMove {
+      from { background-position: 0% center; }
+      to   { background-position: 200% center; }
+    }
+  </style>
+
+</body>
+</html>
+
+<!-- Q- What is the flow/priority order of CSS type.
+CSS totally depends on which ever is sabse neeche
+link me style 
+internal style
+inline style - Highest
+ -->

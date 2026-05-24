@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Homepage Clone</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #232f3e;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .logo {
+            font-size: 2em;
+            font-weight: bold;
+            display: inline-block;
+            color: #ff9900;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        header nav {
+            display: inline-block;
+            float: right;
+            margin-top: 8px;
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1588176056886-b5fe705d1d8d?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA0OXwwfDF8c2VhY2h8Nnx8fG9ubGluZSUyMHNob3BwaW5nJTIwYmFja2dyb3VuZHN8ZW58MHx8fHwxNjY0MTEzMDEw&ixlib=rb-1.2.1&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero .search-bar {
+            width: 60%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Product Section */
+        .product-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .product-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product {
+            background-color: white;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .product img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .product .info {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .product .info h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .product .info p {
+            font-size: 1.1em;
+            color: #007185;
+            margin-bottom: 15px;
+        }
+
+        .product .info .price {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #232f3e;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1.1em;
+        }
+
+        footer .social-icons {
+            margin-top: 15px;
+        }
+
+        footer .social-icons i {
+            font-size: 1.5em;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+
+        /* Scrollable Effect */
+        .scrollable {
+            height: 2000px;
+            /* long enough to create scroll */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Amazon</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Best Sellers</a>
+            <a href="#">Categories</a>
+            <a href="#">Deals</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Welcome to Amazon</h1>
+        <input type="text" class="search-bar" placeholder="Search for products...">
+    </div>
+
+    <div class="scrollable">
+        <!-- Product Section -->
+        <div class="product-section" id="new-product-0">
+            <h2>Featured Products</h2>
+            <div class=" products">
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 1">
+                    <div class="info">
+                        <h3>Product 1</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$19.99</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 2">
+                    <div class="info">
+                        <h3>Product 2</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$29.99</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 3">
+                    <div class="info">
+                        <h3>Product 3</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$39.99</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 4">
+                    <div class="info">
+                        <h3>Product 4</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$49.99</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-section" id="new-product-1">
+            <h2>New Products</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 1">
+                    <div class="info">
+                        <h3>Product 1</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$19.99</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 2">
+                    <div class="info">
+                        <h3>Product 2</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$29.99</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 3">
+                    <div class="info">
+                        <h3>Product 3</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$39.99</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 4">
+                    <div class="info">
+                        <h3>Product 4</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$49.99</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-section" id="new-product-2">
+            <h2>New Products 2</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 1">
+                    <div class="info">
+                        <h3>Product 1</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$19.99</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 2">
+                    <div class="info">
+                        <h3>Product 2</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$29.99</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 3">
+                    <div class="info">
+                        <h3>Product 3</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$39.99</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Product 4">
+                    <div class="info">
+                        <h3>Product 4</h3>
+                        <p>High-quality product description</p>
+                        <div class="price">$49.99</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <p>&copy; 2025 Amazon. All rights reserved.</p>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for Social Icons (optional) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>

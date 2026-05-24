@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Elements — Examples HTML</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+        background: #f6f8fb;
+        color: #0b1220;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 8px;
+        padding: 14px;
+        margin: 12px 0;
+        box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+      }
+
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .row {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+
+      input,
+      textarea,
+      select,
+      button {
+        padding: 8px;
+        border: 1px solid #d6dbe0;
+        border-radius: 6px;
+      }
+
+      .muted {
+        color: #6b7280;
+        font-size: 0.95rem;
+      }
+
+      pre {
+        background: #0f1724;
+        color: #f8fafc;
+        padding: 10px;
+        border-radius: 6px;
+        overflow: auto;
+        font-family: monospace;
+        font-size: 0.9rem;
+      }
+
+      .group {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .small {
+        font-size: 0.9rem;
+        color: #374151;
+      }
+
+      .example {
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Form elements — definitions & simple examples</h1>
+    <p class="muted">
+      Each example shows label, live control and the HTML snippet. Keep it
+      simple for learning.
+    </p>
+
+    <section class="card">
+      <label for="name">Text input — &lt;input type="text"&gt;</label>
+      <div class="row">
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Enter your name"
+          required
+        />
+        <div class="small muted">
+          Common attrs: name, id, placeholder, required, readonly
+        </div>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="text" id="name" name="name" placeholder="Enter your name" required&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="password">Password — &lt;input type="password"&gt;</label>
+      <div class="row">
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Password"
+        />
+        <div class="small muted">Masks input; use for credentials.</div>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="password" id="password" name="password" placeholder="Password"&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="email">Email — &lt;input type="email"&gt;</label>
+      <div class="row">
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="name@example.com"
+        />
+        <div class="small muted">Validates basic email format on submit.</div>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="email" id="email" name="email" placeholder="name@example.com" required&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="tel">Telephone — &lt;input type="tel"&gt; &copy;</label>
+      <div class="row">
+        <input id="tel" name="phone" type="tel" placeholder="+91 98765 43210" />
+        <div class="small muted">Use pattern for validation if needed.</div>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="tel" id="tel" name="phone" pattern="[0-9]{10}" placeholder="9876543210"&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="number">Number — &lt;input type="number"&gt;</label>
+      <div class="row">
+        <input
+          id="number"
+          name="qty"
+          type="number"
+          min="1"
+          max="10"
+          value="1"
+        />
+        <div class="small muted">
+          Use min/max/step attributes for numeric constraints.
+        </div>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="number" id="number" name="qty" min="1" max="10" value="1"&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="search">Search — &lt;input type="search"&gt;</label>
+      <div class="row">
+        <input id="search" name="q" type="search" placeholder="Search..." />
+        <div class="small muted">
+          Optimized UI for search inputs on some browsers.
+        </div>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="search" id="search" name="q" placeholder="Search..."&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="url">URL — &lt;input type="url"&gt;</label>
+      <div class="row">
+        <input
+          id="url"
+          name="website"
+          type="url"
+          placeholder="https://example.com"
+        />
+        <div class="small muted">Basic URL format validation on submit.</div>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="url" id="url" name="website" placeholder="https://example.com"&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="color">Color — &lt;input type="color"&gt;</label>
+      <div class="row">
+        <input id="color" name="favcolor" type="color" value="#0ea5a4" />
+        <div class="small muted">Opens color picker in supported browsers.</div>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="color" id="color" name="favcolor" value="#0ea5a4"&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="range">Range — &lt;input type="range"&gt;</label>
+      <div class="row">
+        <input
+          id="range"
+          name="volume"
+          type="range"
+          min="0"
+          max="100"
+          value="40"
+        />
+        <div class="small muted">Good for sliders (volume, brightness).</div>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="range" id="range" name="volume" min="0" max="100" value="40"&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="date">Date / Time</label>
+      <div class="row">
+        <input id="date" name="date" type="date" />
+        <input id="time" name="time" type="time" />
+        <input id="datetime" name="dt" type="datetime-local" />
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="date"&gt;  &lt;input type="time"&gt;  &lt;input type="datetime-local"&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="file">File upload — &lt;input type="file"&gt;</label>
+      <div class="row">
+        <input id="file" name="avatar" type="file" accept="image/*" />
+        <div class="small muted">
+          Use accept to restrict file types; use multiple for multiple files.
+        </div>
+      </div>
+      <div class="example">
+        <pre>&lt;input type="file" name="avatar" accept="image/*"&gt;</pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <label>Checkboxes & Radios</label>
+      <div class="group">
+        <label
+          ><input type="checkbox" name="features" value="wifi" /> Wi‑Fi</label
+        >
+        <label
+          ><input type="checkbox" name="features" value="parking" />
+          Parking</label
+        >
+      </div>
+      <div class="group" style="margin-top: 8px">
+        <label><input type="radio" name="size" value="s" /> S</label>
+        <label><input type="radio" name="size" value="m" /> M</label>
+        <label><input type="radio" name="size" value="l" /> L</label>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input type="checkbox" name="features" value="wifi"&gt; &lt;input type="radio" name="size" value="m"&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="message">Textarea — &lt;textarea&gt;</label>
+      <div class="row">
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          cols="40"
+          placeholder="Type your message"
+        ></textarea>
+      </div>
+      <div class="example">
+        <pre>
+&lt;textarea id="message" name="message" rows="4" cols="40"&gt;&lt;/textarea&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="country">Select — &lt;select&gt; &amp; &lt;option&gt;</label>
+      <div class="row">
+        <select id="country" name="country">
+          <option value="">Choose country</option>
+          <option value="in">India</option>
+          <option value="us">United States</option>
+          <option value="uk">United Kingdom</option>
+        </select>
+        <div class="small muted">
+          Supports single &amp; multiple (multiple attribute).
+        </div>
+      </div>
+      <div class="example">
+        <pre>
+&lt;select name="country"&gt; &lt;option value="in"&gt;India&lt;/option&gt; &lt;/select&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label for="browsers"
+        >Datalist — suggestions &lt;input list&gt; + &lt;datalist&gt;</label
+      >
+      <div class="row">
+        <input
+          list="browsers"
+          id="browsers"
+          name="browser"
+          placeholder="Choose browser"
+        />
+        <datalist id="browsers">
+          <option value="Chrome"></option>
+          <option value="Firefox"></option>
+          <option value="Safari"></option>
+          <option value="Edge"></option>
+        </datalist>
+      </div>
+      <div class="example">
+        <pre>
+&lt;input list="browsers"&gt; &lt;datalist id="browsers"&gt; &lt;option value="Chrome"&gt; &lt;/datalist&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="card">
+      <label>Buttons — submit, reset, button</label>
+      <div class="row">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button">Button</button>
+      </div>
+      <div class="example">
+        <pre>&lt;button type="submit"&gt;Submit&lt;/button&gt;</pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Short notes</h3>
+      <ul>
+        <li class="small">
+          Use <code>label for="id"</code> or wrap the control in &lt;label&gt;
+          for accessibility.
+        </li>
+        <li class="small">
+          Give each control a <code>name</code> attribute to include it in form
+          submissions.
+        </li>
+        <li class="small">
+          Use <code>required</code>, <code>disabled</code>,
+          <code>readonly</code> where appropriate.
+        </li>
+        <li class="small">
+          Use <code>accept</code> for file types, and
+          <code>min/max/step</code> for numbers and ranges.
+        </li>
+        <li class="small">
+          Prefer semantic markup and provide clear placeholder or helper text.
+        </li>
+      </ul>
+    </section>
+
+    <footer class="muted">
+      Keep examples small and practice building a real form (login, profile,
+      product review) to remember attributes and accessibility.
+    </footer>
+  </body>
+</html>

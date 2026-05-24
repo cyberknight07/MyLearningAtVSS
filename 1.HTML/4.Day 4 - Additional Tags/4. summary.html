@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Day 4 — Additional Tags: Summary</title>
+    <style>
+        :root {
+            --bg: #c7c9c6;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --accent: #0ea5a4;
+            --mono: SFMono-Regular, Menlo, monospace
+        }
+
+        body {
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            margin: 0;
+            padding: 24px;
+            background: var(--bg);
+            color: #111827
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.35rem
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 18px
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04)
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 8px
+        }
+
+        .demo {
+            border: 1px dashed #e6eef0;
+            padding: 12px;
+            border-radius: 6px;
+            background: #fbfeff;
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .code {
+            background: #0f1724;
+            color: #f8fafc;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            overflow: auto
+        }
+
+        pre {
+            margin: 0
+        }
+
+        .langs {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+            flex-wrap: wrap
+        }
+
+        .lang {
+            background: #f1f5f9;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 0.9rem
+        }
+
+        .label {
+            font-weight: 600;
+            color: #0f1724
+        }
+
+        .attrs {
+            margin: 8px 0
+        }
+
+        footer {
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 0.9rem
+        }
+
+        .badge {
+            background: var(--accent);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 600
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="badge">Day 4</div>
+        <div>
+            <h1>Additional Tags — Summary, Demos & Interview Notes ✅</h1>
+            <div class="meta">Tags covered: <strong>&lt;img&gt;, &lt;a&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;,
+                    &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</strong></div>
+        </div>
+    </header>
+
+    <section class="grid">
+        <!-- IMG -->
+        <article class="card" id="img-tag">
+            <h2>&lt;img&gt; — Image</h2>
+            <p class="meta">Purpose: embed images; void element (no closing tag). Use <code>alt</code> for
+                accessibility.</p>
+            <div class="demo">
+                <img src="bag.png" alt="Bag example"
+                    style="width:140px;border-radius:6px;object-fit:cover;border:1px solid #e6eef0">
+                <div>
+                    <div class="label">Live demo</div>
+                    <div class="attrs"><strong>Common attributes:</strong> <code>src</code>, <code>alt</code>,
+                        <code>width</code>, <code>height</code>, <code>loading</code>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Example</h3>
+            <div class="code">
+                <pre>&lt;img src="bag.png" alt="Blue bag" width="200" loading="lazy"&gt;</pre>
+            </div>
+
+            <div class="langs">
+                <div class="lang"><strong>EN:</strong> Inline element to show an image. Always provide meaningful
+                    <code>alt</code> text for accessibility.
+                </div>
+                <div class="lang"><strong>हिंदी:</strong> पेज पर छवि दिखाने के लिए टैग; <code>alt</code> में वर्णनात्मक
+                    पाठ दें ताकि स्क्रीन रीडर उपयोग कर सके।</div>
+                <div class="lang"><strong>Hinglish:</strong> Image dikhane ka tag; <code>alt</code> zaroori hai (screen
+                    reader ke liye).</div>
+            </div>
+        </article>
+
+        <!-- ANCHOR -->
+        <article class="card" id="anchor-tag">
+            <h2>&lt;a&gt; — Anchor / Link</h2>
+            <p class="meta">Purpose: create hyperlinks. Can navigate to other resources or trigger downloads.</p>
+            <div class="demo">
+                <a href="https://developer.mozilla.org/" target="_blank" rel="noopener"
+                    style="padding:8px 12px;background:var(--accent);color:white;border-radius:6px;text-decoration:none">Open
+                    MDN (new tab)</a>
+                <div style="margin-left:8px;color:var(--muted)">Try target=_blank + rel="noopener"</div>
+            </div>
+
+            <h3>Example</h3>
+            <div class="code">
+                <pre>&lt;a href="https://example.com" target="_blank" rel="noopener" title="Example site"&gt;Visit example&lt;/a&gt;</pre>
+            </div>
+
+            <div class="attrs"><strong>Key attributes:</strong> <code>href</code>, <code>target</code>,
+                <code>rel</code>, <code>download</code>, <code>title</code>
+            </div>
+
+            <div class="langs">
+                <div class="lang"><strong>EN:</strong> Creates a hyperlink. Use <code>rel="noopener"</code> with
+                    <code>target="_blank"</code> for security.
+                </div>
+                <div class="lang"><strong>हिंदी:</strong> हाइपरलिंक बनाने के लिए; नई विंडो में खुलने पर
+                    <code>rel="noopener"</code> जोड़ें।
+                </div>
+                <div class="lang"><strong>Hinglish:</strong> Link banata hai; agar <code>_blank</code> use karoge toh
+                    <code>rel="noopener"</code> jaroor lagao (security ke liye).
+                </div>
+            </div>
+        </article>
+
+        <!-- UNORDERED / ORDERED LISTS -->
+        <article class="card" id="lists">
+            <h2>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; — Lists</h2>
+            <p class="meta">Purpose: group related items. <code>&lt;ul&gt;</code> = unordered, <code>&lt;ol&gt;</code> =
+                ordered, each item in <code>&lt;li&gt;</code>.</p>
+
+            <div class="demo" style="flex-direction:column;align-items:flex-start">
+                <div style="display:flex;gap:12px;width:100%">
+                    <ul style="list-style-type:square;padding-left:18px;margin:0">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <ol style="list-style-type:lower-alpha;padding-left:18px;margin:0">
+                        <li>Step A</li>
+                        <li>Step B</li>
+                        <li>Step C</li>
+                    </ol>
+                </div>
+                <div style="margin-top:8px;color:var(--muted)">Use CSS <code>list-style-type</code> to change markers.
+                </div>
+            </div>
+
+            <h3>Example</h3>
+            <div class="code">
+                <pre>&lt;ul style="list-style-type:square;"&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol type="a"&gt;
+  &lt;li&gt;First&lt;/li&gt;
+  &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;</pre>
+            </div>
+
+            <div class="langs">
+                <div class="lang"><strong>EN:</strong> Use lists for groups of related items; keep semantics correct for
+                    accessibility.</div>
+                <div class="lang"><strong>हिंदी:</strong> संबंधी तत्वों की सूची बनाने के लिए; स्क्रीन रीडर के लिए संरचना
+                    सही रखें।</div>
+                <div class="lang"><strong>Hinglish:</strong> Related items ke liye list; semantics sahi rakhna
+                    (accessibility ke liye).
+                </div>
+            </div>
+        </article>
+
+        <!-- DESCRIPTION LIST -->
+        <article class="card" id="description-list">
+            <h2>&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt; — Description List</h2>
+            <p class="meta">Purpose: pairs terms (<code>&lt;dt&gt;</code>) with descriptions (<code>&lt;dd&gt;</code>),
+                good for definitions or metadata.</p>
+
+            <div class="demo" style="flex-direction:column;align-items:flex-start">
+                <dl>
+                    <dt><strong>HTML</strong></dt>
+                    <dd>Markup language for web pages</dd>
+                    <dt><strong>CSS</strong></dt>
+                    <dd>Styling language</dd>
+                </dl>
+            </div>
+
+            <h3>Example</h3>
+            <div class="code">
+                <pre>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Tags and elements&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+            </div>
+
+            <div class="langs">
+                <div class="lang"><strong>EN:</strong> Best for term–definition pairs (e.g., glossary, key–value lists).
+                </div>
+                <div class="lang"><strong>हिंदी:</strong> शब्द और उसकी परिभाषा के जोड़ के लिए उपयुक्त—जैसे शब्दावली।
+                </div>
+                <div class="lang"><strong>Hinglish:</strong> Term-definition pair ke liye; glossary jaisa content ke
+                    liye perfect.</div>
+            </div>
+        </article>
+    </section>
+
+    <section style="margin-top:18px" class="card">
+        <h2>Interview-ready Definitions (short & precise) 💬</h2>
+        <ul>
+            <li><strong>&lt;img&gt;</strong> — EN: Embeds an image; provide <code>alt</code> for accessibility. | हिंदी:
+                इमेज दिखाने का टैग; <code>alt</code> जरूरी। | Hinglish: Image embed karne ka tag; alt zaroori.</li>
+            <li><strong>&lt;a&gt;</strong> — EN: Creates a hyperlink; use <code>rel="noopener"</code> with
+                <code>target="_blank"</code>. | हिंदी: हाइपरलिंक बनाने के लिए। | Hinglish: Link banata hai; security
+                attributes lagao.
+            </li>
+            <li><strong>&lt;ul&gt;/&lt;ol&gt;/&lt;li&gt;</strong> — EN: Ordered/unordered lists for grouped items. |
+                हिंदी: क्रम/अक्रम सूची; सूची आइटम &lt;li&gt; में होंगे। | Hinglish: Lists group karne ke liye; items li
+                mein.
+            </li>
+            <li><strong>&lt;dl&gt;/&lt;dt&gt;/&lt;dd&gt;</strong> — EN: Term–definition pairs for glossaries or
+                key–value info. | हिंदी: शब्द–परिभाषा जोड़। | Hinglish: Term aur definition show karne ka structure.
+            </li>
+        </ul>
+
+        <h3 style="margin-top:12px">Quick Tips 🔧</h3>
+        <ol>
+            <li>Always use semantic tags for accessibility and SEO.</li>
+            <li>Provide <code>alt</code> for images and descriptive <code>title</code> when helpful.</li>
+            <li>For links opening in new tabs, add <code>rel="noopener noreferrer"</code>.</li>
+            <li>Style lists via CSS; avoid using lists purely for layout when not semantically appropriate.</li>
+        </ol>
+    </section>
+
+    <footer>
+        <div style="font-weight:600">Wrap-up:</div>
+        <div class="meta">This file summarizes the tags in this folder with examples and short bilingual interview
+            definitions. Use it as a quick revision sheet before interviews.</div>
+    </footer>
+</body>
+
+</html>

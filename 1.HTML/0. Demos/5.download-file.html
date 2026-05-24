@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Download</title>
+</head>
+
+<body>
+
+    <h2>Download Sample PDF</h2>
+    <button onclick="downloadPDF()">Download PDF</button>
+
+    <script>
+        function downloadPDF() {
+            fetch("https://pdfobject.com/pdf/sample.pdf")
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    console.log("URL: ", url);
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = "sample.pdf";
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    //window.URL.revokeObjectURL(url);
+                })
+                .catch(err => console.error("Download failed:", err));
+        }
+    </script>
+
+</body>
+
+</html>

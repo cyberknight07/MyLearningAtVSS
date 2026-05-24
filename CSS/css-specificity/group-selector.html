@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Selector</title>
+    <style>
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      h1,
+      h2,
+      h3,
+      h4,
+      ul .item {
+        color: orangered;
+        background-color: aqua;
+      }
+
+      p::first-letter{
+        font-size: 50px;
+      }
+
+      input{
+        color: red;
+        background: blue;
+      }
+
+      input[type="submit"]{
+        width: 100%;
+        color: blue;
+        cursor: pointer;
+        background: red;
+      }
+
+      input[type="text"]{
+        width: 100%;
+        color: blue;
+        cursor: pointer;
+        background: red;
+      }
+
+      button{
+        padding: 10px;
+        width: 100%;
+        color: white;
+        background: #000;
+      }
+      button:hover{
+        cursor: pointer;
+        box-shadow: 2px 2px 2px red;
+      }
+    </style>
+  </head>
+  <body>
+    Hello
+    <p>Welcome from Para</p>
+    <h1>Welcome from Heading</h1>
+    <h2>Welcome from H2</h2>
+    <h3>Welcome from H3</h3>
+    <h4>Welcome from H4</h4>
+    <span>Welcome from Span</span>
+    <div>Welcome from div</div>
+    <input type="text" placeholder="Enter something" />
+    <input type="email" placeholder="Enter something" />
+    <input type="phone number" placeholder="Enter something" />
+    <input type="submit" placeholder="Enter something" />
+    <p>Hello</p>
+    <button>Submit</button>
+    <h2>Welcome from H2</h2>
+    <div class="container">
+      <div class="sidebar">
+        <ul>
+          <li class="item">Apple</li>
+          <li>Samsung</li>
+          <li>LG</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

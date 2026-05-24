@@ -1,0 +1,14 @@
+- What is Amazon ec2
+- How to setup aws ec2
+- What is ssh in ec2 & how to connect using it
+- What is terminal based OS & why we're creating it instead of UI based OS
+- What are security groups in aws ec2
+- How to setup a server with ec2
+- How to install nodejs with ec2
+- How to run an application on ec2
+- What is an application server & difference between application & web server
+- How to enable a port in security groups
+- How to create subdomain in godaddy or any domain provider
+- How to connect subdomain with ec2 ip
+- What is A record in DNS
+- How to test your subdomain

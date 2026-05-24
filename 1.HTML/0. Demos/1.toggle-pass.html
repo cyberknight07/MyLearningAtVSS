@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Netflix Style Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.7)),
+                url("https://assets.nflxext.com/ffe/siteui/vlv3/9c7f6c3d-5a5c-4c16-bc7b-5e4d3f6f3b5f/7b8c91a7-1d2b-4d0b-b9b5-40f5db8f1a5f/IN-en-20240115-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-box {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 60px 40px;
+            width: 350px;
+            border-radius: 4px;
+            color: #fff;
+        }
+
+        .login-box h1 {
+            margin-bottom: 25px;
+        }
+
+        .field {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 16px 44px 16px 16px;
+            background: #333;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .field label {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            color: #8c8c8c;
+            font-size: 14px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: 0.2s;
+        }
+
+        .field input:focus+label,
+        .field input:not(:placeholder-shown)+label {
+            top: 6px;
+            font-size: 11px;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #8c8c8c;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: #e50914;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .login-btn:hover {
+            background: #f6121d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+        <h1>Sign In to Netflix</h1>
+
+        <div class="field">
+            <input type="text" id="email" required placeholder=" ">
+            <label>Email or phone number</label>
+        </div>
+
+        <div class="field">
+            <input type="password" id="password" required placeholder=" ">
+            <label>Password</label>
+            <button class="toggle-btn" onclick="togglePassword()">SHOW</button>
+        </div>
+
+        <button class="login-btn">Sign In</button>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const toggleBtn = document.querySelector(".toggle-btn");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleBtn.textContent = "HIDE";
+            } else {
+                passwordInput.type = "password";
+                toggleBtn.textContent = "SHOW";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

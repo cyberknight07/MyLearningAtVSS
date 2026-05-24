@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main"></div>
+  </body>
+  <script>
+    const numbers = prompt("Provide a number");
+    let sum = 0;
+    const container = document.getElementsByClassName("main")[0];
+    const list = document.createElement("ol");
+
+    container.appendChild(list);
+    const add = (num1, num2) => num1 + num2;
+
+    for (let index = 1; index <= numbers; index++) {
+      sum = add(sum, index);
+      const listElement = document.createElement("li");
+      listElement.textContent = sum;
+      list.appendChild(listElement);
+    }
+  </script>
+</html>

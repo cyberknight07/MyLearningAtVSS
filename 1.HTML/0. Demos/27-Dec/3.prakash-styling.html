@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page Netflix</title>
+</head>
+<style>
+    /* Normally, an element’s width or height does not include padding or border — it only measures the content.
+    This can make layouts tricky.
+    border-box changes this: width = content + padding + border */
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Sets the body to have no margin, full viewport height,
+     a centered background image that covers the screen, 
+     uses flexbox to center content both horizontally and vertically, 
+     positions elements relatively, and makes text white. */
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: url("https://assets.nflxext.com/ffe/siteui/vlv3/1c6f01b4-f0d2-4b67-8c36-2d8a8a17e4b2/web/IN-en-20231211-popsignuptwoweeks-perspective_alpha_website_large.jpg") no-repeat center center / cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: white;
+    }
+
+    /* Adds a semi-transparent black overlay covering the entire body, positioned absolutely behind other content. */
+
+    /* content: ""; */
+    /* Creates a pseudo-element before the body content. */
+    /* The "" means it has no visible text, but it exists in the DOM. */
+    /* Why use it? */
+    /* Pseudo-elements like ::before need content to render anything. Here, it’s used for styling purposes, not text. */
+
+    /* position: absolute; */
+    /* Positions the pseudo-element absolutely relative to the nearest positioned ancestor (here, body with position: relative). */
+    /* Why use it? */
+    /* Allows the overlay to cover the whole body independently of other content. */
+
+    /* inset: 0; */
+    /* Shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+    /* Makes the pseudo-element stretch to cover the entire body. */
+
+    /* background: rgba(0,0,0,0.65); */
+    /* Sets the background color to black with 65% opacity. */
+    /* Why use it? */
+    /* Creates a dark overlay effect over the background image, making text easier to read. */
+
+    /* z-index: 0; */
+    /* Places the pseudo-element behind other content. */
+    /* Since other elements are at higher z-index or default, 
+this ensures the overlay doesn’t cover them. */
+
+    body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        z-index: 0;
+    }
+
+    /* Positions the element absolutely 20px from the top and left, 
+    makes the text 28px, bold, Netflix-red in color, 
+    and places it above other elements using a higher z-index. */
+
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 42px;
+        font-weight: bold;
+        color: #e50914;
+        z-index: 2;
+    }
+
+
+    /* Styles the login box as a 340px wide, rounded,
+     dark semi-transparent panel with padding, 
+     positioned above the background using relative positioning and a higher z-index. */
+    /* z-index batata hai kaunsa element upar dikhai dega aur kaunsa neeche jab elements overlap hote hain 
+     — higher z-index = element upar */
+
+    .login-box {
+        position: relative;
+        z-index: 2;
+        width: 340px;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 40px 30px;
+        border-radius: 4px;
+    }
+
+    .login-box h1 {
+        margin-bottom: 20px;
+    }
+
+    /* Makes the input full-width with inner spacing, 
+bottom gap, dark background, light border, rounded corners, 
+white 14px text for a clean styled form field */
+
+    .login-box input {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 12px;
+        background: #333;
+        border: 1px solid #555;
+        border-radius: 4px;
+        color: white;
+        font-size: 14px;
+    }
+
+    /* Sets the input placeholder text color to light grey so it looks subtle compared to the actual typed text. */
+
+    .login-box input::placeholder {
+        color: #aaa;
+    }
+
+    /* Makes all login box buttons full-width with padding, 
+rounded corners, no border, pointer cursor on hover, 
+and readable 15px text. */
+
+    .login-box button {
+        width: 100%;
+        padding: 14px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    /* Styles the first button inside the login box 
+    with a bold white font on a Netflix-red background 
+    to make it stand out as the main action. */
+
+    .login-box button:first-of-type {
+        background: #e50914;
+        color: white;
+        font-weight: bold;
+    }
+
+    .code-btn {
+        background: #444;
+        color: white;
+        margin-top: 10px;
+    }
+
+    .OR {
+        text-align: center;
+        color: #aaa;
+        margin: 12px 0;
+        font-size: 13px;
+    }
+
+    .login-box>a {
+        display: block;
+        margin-top: 8px;
+        font-size: 14px;
+        color: #e6e6e6;
+        /* color: #b3b3b3; */
+        text-decoration: underline;
+        text-align: center;
+    }
+
+    .login-box a:hover {
+        /* color: #e6e6e6; */
+        color: #b3b3b3;
+    }
+
+    .remember {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        accent-color: #b3b3b3;
+        /* color: #b3b3b3; */
+        margin-bottom: 18px;
+        cursor: pointer;
+    }
+
+    .remember input {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        color: #b3b3b3;
+        /* accent-color: #b3b3b3; */
+    }
+
+    .signup {
+        text-align: left;
+        /* margin-top: 18px; */
+        font-size: 18px;
+        color: #b3b3b3;
+        box-sizing: border-box;
+
+    }
+
+    .signup p {
+        margin: 0;
+    }
+
+    .signup a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 4px;
+    }
+
+    .signup a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<style>
+    /* .login-box input {
+        background-color: aquamarine;
+    } */
+
+    .login-box>.remember>input {
+        background-color: aquamarine;
+    }
+</style>
+
+<body>
+    <!-- <header><h1>Netflix</h1></header> -->
+    <!-- <h2>Sign in</h2> -->
+    <!-- <div class="logo">NETFLIX</div> -->
+
+    <div class="logo">NETFLIX</div>
+
+    <div class="login-box">
+        <h1>Sign In</h1>
+        <!-- <label for="Email or mobile number"></label><br> -->
+        <input type="text" placeholder="Email or mobile number" required>
+        <!-- <label for="Password"></label> -->
+        <input type="Password" placeholder="Password">
+        <button>Sign In</button><br><br>
+        <div class="OR">OR</div>
+        <!-- <input type="text" placeholder="Use a sign-in code"> -->
+        <button class="code-btn">Use a sign-in code</button><br><br>
+        <a href="#">Forgot Password?</a><br>
+
+        <div class="remember">
+            <input type="text" id="remember" checked>
+            <label for="remember">Remember me</label>
+            <div>
+                <input type="text" placeholder="Nested Input">
+                <div>
+                    <input type="text" placeholder="Nested Input">
+                </div>
+            </div>
+        </div>
+
+        <div class="signup">
+            <p><span>New to Netflix?</span><a href="#">Sign up now.</a></p>
+            <div>
+                <div>
+                    <div>
+                        <input type="text" placeholder="Nested Input">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#">Learn more.</a>
+
+
+        <p>This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
+
+
+</body>
+
+</html>

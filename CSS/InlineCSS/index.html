@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inline CSS</title>
+    <style>
+      @keyframes headingAnimation {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(-10px);
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      }
+
+      @keyframes colorAnimation {
+        0% {
+          color: aliceblue;
+        }
+        25% {
+          color: red;
+        }
+        50% {
+          color: green;
+        }
+        75% {
+          color: blue;
+        }
+        100% {
+          color: aliceblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1
+      style="
+        padding: 10px;
+        border: 2px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 700;
+        background: black;
+        animation: headingAnimation 2s ease infinite,
+          colorAnimation 4s ease infinite;
+      "
+    >
+      Welcome to the world of <strong><i>Beutification</i></strong>
+    </h1>
+  </body>
+</html>

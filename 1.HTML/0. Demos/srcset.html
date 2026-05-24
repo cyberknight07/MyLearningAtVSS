@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+
+<body>
+    <header>
+        <h1>Task</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Here are all elements and tags</h2>
+
+            <form>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- RESPONSIVE IMAGE (CORRECT WAY) -->
+        <aside>
+            <picture>
+                <!-- Mobile -->
+                <source media="(max-width: 710px)"
+                    srcset="https://cdn.i.haymarketmedia.asia/?n=campaign-india/content/Be%20Someone%27s%20We-%203.jpg">
+
+                <!-- Desktop fallback -->
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_md7bjQIjwC3uU3xekCEM8YnekVmnIavb01Jr25eQtmNMs=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Advertisement" loading="lazy">
+            </picture>
+        </aside>
+
+        <article>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+        </article>
+    </main>
+
+    <a href="./sample.pdf" download="av_sample_PDF.pdf">Download PDF</a>
+
+    <footer>
+        <a href="mailto:help@example.com">help@example.com</a>
+    </footer>
+</body>
+
+</html>

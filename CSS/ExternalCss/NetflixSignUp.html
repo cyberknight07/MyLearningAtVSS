@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Netflix Sign Up</title>
+
+    <link rel="stylesheet" href="../../ExternalCss/NetflixSignUp.css" />
+  </head>
+
+  <body>
+    <!-- Background -->
+    <div class="mainContainer">
+      <!-- Header -->
+      <div class="header">
+        <svg
+          width="150"
+          height="50"
+          viewBox="0 0 150 50"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Dark background -->
+          <rect x="0" y="0" width="150" height="50" fill="#221F1F" rx="4" />
+
+          <!-- NETFLIX text in bold red -->
+          <text
+            x="75"
+            y="36"
+            font-size="32"
+            font-weight="900"
+            fill="#E50914"
+            text-anchor="middle"
+            letter-spacing="0.5"
+          >
+            NETFLIX
+          </text>
+        </svg>
+      </div>
+
+      <!-- Signup Box -->
+      <div class="signup">
+        <div id="signup-container">
+          <h1>Create Your Account</h1>
+
+          <!-- First Name Input -->
+          <input type="text" placeholder="First Name" id="input-box" />
+
+          <!-- Last Name Input -->
+          <input type="text" placeholder="Last Name" id="input-box" />
+
+          <!-- Email Input -->
+          <input type="email" placeholder="Email address" id="input-box" />
+
+          <!-- Password Input -->
+          <input type="password" placeholder="Password" id="input-box" />
+
+          <!-- Confirm Password Input -->
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            id="input-box"
+          />
+
+          <!-- Terms Agreement -->
+          <div class="terms">
+            <input type="checkbox" />
+            <span
+              >I agree to the Netflix
+              <span>Terms of Use</span>
+              and
+              <span>Privacy Policy</span></span
+            >
+          </div>
+
+          <!-- Sign Up Button -->
+          <button class="button">Create Account</button>
+
+          <!-- Already have account section -->
+          <div class="account">
+            Already have an account?
+            <span id="spanbox"> Sign In</span>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="contact">
+            Need help?
+            <span id="spanbox">Contact Support</span>
+          </div>
+
+          <!-- reCAPTCHA notice -->
+          <div class="recaptcha">
+            This page is protected by Google reCAPTCHA to ensure you're not a
+            bot. <span id="spanbox">Learn more</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
